@@ -8,7 +8,7 @@ const char* password = "tdfn1103";
 
 // Telegram Bot
 String botToken = "8051442806:AAELFL14MwKEyl3ukkqZlM43_72Npub4vmE";
-String chatID = "1232762320"; // ID pengguna yang menerima pesan
+String chatID = "1232762320"; 
 
 // DHT Setup
 #define DHTPIN 25
@@ -21,11 +21,11 @@ bool ledTriggered = false;
 
 // Waktu pengiriman berkala
 unsigned long lastSendTime = 0;
-unsigned long sendInterval = 60000; // 60 detik
+unsigned long sendInterval = 60000; 
 
 // Waktu polling Telegram
 unsigned long lastPollTime = 0;
-unsigned long pollInterval = 5000; // 5 detik
+unsigned long pollInterval = 5000; 
 int lastUpdateID = 0;
 
 void setup() {
@@ -67,7 +67,7 @@ void loop() {
     sendTelegramMessage(message);
   }
 
-  // Cek perintah dari Telegram setiap 5 detik
+  // Cek command dari Telegram
   if (millis() - lastPollTime > pollInterval) {
     lastPollTime = millis();
     checkTelegramCommands();
